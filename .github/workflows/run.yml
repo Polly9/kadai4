@@ -1,8 +1,14 @@
-name: actions-traila
-on: [push]
+name: actions-trail
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      run: ./test_.sh
+      run: |
+        chmod +x gcd.sh test_.sh
+        ./test_.sh
 
