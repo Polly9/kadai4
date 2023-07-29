@@ -8,6 +8,8 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: check test
       run: |
         chmod +x gcd.sh test_.sh
         ./test_.sh
