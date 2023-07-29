@@ -5,6 +5,12 @@ if [ $1 -lt 1 ];then
 elif [ $2 -lt 1 ];then
     echo "Error!"
     exit 1
+elif ! expr $1: '[0-9]*$' >&/dev/null; then
+    echo "Error!"
+    exit 1
+elif ! expr $2: '[0-9]*$' >&/dev/null; then
+    echo "Error!"
+    exit 1
 else
     comm -1 -2 <(factor $1|sed  's/ /\n/g'|sort) <(factor $2|sed 's/ /\n/g'|sort) | awk 'BEGIN{a=1}{a*=$1}END{print a}'
 fi
