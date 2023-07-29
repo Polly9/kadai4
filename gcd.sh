@@ -1,14 +1,14 @@
 #!/bin/bash
-if [ $1 -lt 1 ];then
+if ! [[ "$1" =~ ^[0-9]+$ ]];then
+    echo "Error!"
+    exit 1
+elif ! [[ "$2" =~ ^[0-9]+$ ]];then
+    echo "Error!"
+    exit 1
+elif [ $1 -lt 1 ];then
     echo "Error!"
     exit 1
 elif [ $2 -lt 1 ];then
-    echo "Error!"
-    exit 1
-elif ! expr $1: '[0-9]*$' >&/dev/null; then
-    echo "Error!"
-    exit 1
-elif ! expr $2: '[0-9]*$' >&/dev/null; then
     echo "Error!"
     exit 1
 else
