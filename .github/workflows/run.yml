@@ -5,11 +5,11 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  check-bats-version:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: check test
+    - uses: actions/checkout@v2
+    - name: check test
       run: |
         chmod +x gcd.sh test_.sh
         ./test_.sh
