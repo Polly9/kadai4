@@ -1,5 +1,8 @@
 #!/bin/bash
-if ! [[ "$1" =~ ^[0-9]+$ ]];then
+if [ $# -ne 2 ];then
+    echo "Error!"
+    exit 1
+elif ! [[ "$1" =~ ^[0-9]+$ ]];then
     echo "Error!"
     exit 1
 elif ! [[ "$2" =~ ^[0-9]+$ ]];then

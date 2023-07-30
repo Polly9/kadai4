@@ -13,6 +13,10 @@ ERROR_EXIT () {
 echo "5" > $tmp-ans
 diff $tmp-result $tmp-ans || echo "error" >> $tmp-error
 
+./gcd.sh 5 10 6 > $tmp-result
+echo "Error!" > $tmp-ans
+diff $tmp-result $tmp-ans || echo "error" >> $tmp-error
+
 ./gcd.sh > $tmp-result
 echo "Error!" > $tmp-ans
 diff $tmp-result $tmp-ans || echo "error" >> $tmp-error
